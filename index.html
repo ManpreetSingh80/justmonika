@@ -1,0 +1,230 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <style>
+            @font-face {
+                font-family: "DejaVuSans";
+                src: url("./fonts/DejaVuSans.ttf") format('truetype');
+            }
+            @font-face {
+                font-family: "DejaVuSans-Bold";
+                src: url("./fonts/DejaVuSans-Bold.ttf") format('truetype');
+                font-weight: bold;
+            }
+            @keyframes animatedBackground {
+                from { background-position: 0 0; }
+                to { background-position: -100% 0; }
+            }
+            .animate-area	{ 
+                width: 100%; 
+                height: 100%; 
+                background-position: 0px 0px;
+                background-repeat: repeat-x;
+
+                animation: animatedBackground 5000s linear infinite;
+            }
+            body {
+                margin: 0;
+            }
+            .bg {
+                width: 100%;
+                height: 100%;
+                background: url('./img/room.png') no-repeat;
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                position: absolute;
+                z-index: 2;
+            }
+            .bg-container {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                left: 0;
+                top: 0;
+            }
+            .bg-effects {
+                width: 500%;
+                height: 100%;
+                position: absolute;
+                z-index: 1;
+            }
+            .stars {
+/*
+                width: auto; */
+                height: 100%;
+                background: url('./img/mask_2.png');
+                background-repeat: repeat;
+            }
+            .dialog-container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+            #dialog-box {
+                margin-bottom: 2rem;
+                width: 60vw;
+                min-width: 600px;
+                position: relative;
+                line-height: 1.5;
+            }
+            #textbox {
+                width: 100%;
+                height: auto;
+            }
+            #dialog {
+                position: absolute;
+                top: 2rem;
+                left: 2rem;
+                font-size: 1.5rem;
+                color: white;
+                font-family: "DejaVuSans";
+            }
+            .btn {
+                background: #e183ac;
+                color: white;
+                border-radius: 5px;
+                position: fixed;
+                top: 10px;
+                padding: 10px;
+                right: 10px;
+            }
+        </style>
+        
+        <div class="bg-container">
+            <div class="bg-effects">
+                <div class="stars"></div>
+            </div>
+            <div class="bg">
+                <div class="dialog-container">
+                    <div id="dialog-box">
+                        <img id="textbox" src="./img/textbox.png">
+                        <div id="dialog"></div>
+                    </div>
+
+                </div>
+                <div class="btn" onClick="toggleFull()">Full Screen</div>
+            </div>
+        </div>
+        
+<!--        End game monika bgm-->
+        <audio loop autoplay>
+          <source src="./audio/m1.ogg" type="audio/ogg">
+          <source src="./audio/m1.mp3" type="audio/mpeg">
+        </audio>
+        
+        <script>
+            var dialogElem = document.getElementById('dialog');
+            var dialogBoxElem = document.getElementById('dialog-box');
+            var timer, counter;
+            var message = [];
+            
+            function animateText(text) {
+                counter = 1;
+                timer = setInterval('loadText(" '+ text + '")', 50);    
+            }
+            
+            function loadText(text) {
+                dialogElem.innerHTML = text.substring(0, counter);
+                if (counter === text.length) {
+                    clearInterval(timer);
+                } else {
+                    counter++;
+                }
+            }
+            
+            function clearText() {
+                dialogElem.innerHTML = "";
+            }
+            
+            function onSkip() {
+                clearText();
+                if (message.length) {
+                   animateText(message.pop()); 
+                } else {
+                    dialogBoxElem.style.opacity = 0;
+                }
+            }
+            
+            function showMessage() {
+                if (!message.length) {
+                    return;
+                }
+                
+                if (dialogBoxElem.style.opacity !== "1") {
+                   dialogBoxElem.style.opacity = 1; 
+                }
+                
+                onSkip();
+            }
+            
+            document.addEventListener('keypress', onSkip);
+            document.getElementsByTagName('body')[0].addEventListener('click', onSkip);
+            
+            (function(){message = ["Just Monika...", "Just Monika...", "Just Monika..."];showMessage();})();
+            
+            function doFullScreen() {
+                console.log('request full screen');
+                setTimeout(() => requestFullScreen(document.body), 100);
+            }
+            
+            function requestFullScreen(element) {
+                // Supports most browsers and their versions.
+                var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+                if (requestMethod) { // Native full screen.
+                    requestMethod.call(element);
+                } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+                    var wscript = new ActiveXObject("WScript.Shell");
+                    if (wscript !== null) {
+                        wscript.SendKeys("{F11}");
+                    }
+                }
+            }
+            
+            function cancelFullScreen(el) {
+                var requestMethod = el.cancelFullScreen||el.webkitCancelFullScreen||el.mozCancelFullScreen||el.exitFullscreen;
+                if (requestMethod) { // cancel full screen.
+                    requestMethod.call(el);
+                } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+                    var wscript = new ActiveXObject("WScript.Shell");
+                    if (wscript !== null) {
+                        wscript.SendKeys("{F11}");
+                    }
+                }
+            }
+
+            function requestFullScreen(el) {
+                // Supports most browsers and their versions.
+                var requestMethod = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen;
+
+                if (requestMethod) { // Native full screen.
+                    requestMethod.call(el);
+                } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+                    var wscript = new ActiveXObject("WScript.Shell");
+                    if (wscript !== null) {
+                        wscript.SendKeys("{F11}");
+                    }
+                }
+                return false
+            }
+
+            function toggleFull() {
+                var elem = document.body; // Make the body go full screen.
+                var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !== null) ||  (document.mozFullScreen || document.webkitIsFullScreen);
+
+                if (isInFullScreen) {
+                    cancelFullScreen(document);
+                } else {
+                    requestFullScreen(elem);
+                }
+                return false;
+            }
+            
+        </script>
+    </body>
+
+</html>
