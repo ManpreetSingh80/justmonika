@@ -5,7 +5,8 @@ A simple project to fill enough monika in your life.
 ## TODO
 
 - [x] Fullscreen
-- [ ] Add SEO & Analytics
+- [x] Add SEO & Analytics
+- [ ] Optimize resources for web
 - [ ] Add background effects
 - [ ] Add service worker to cache resources
 - [ ] Make About Page

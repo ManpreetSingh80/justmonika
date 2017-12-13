@@ -1,5 +1,28 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <title>Just Monika</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="Just Monika - Spend time with your Monika forever. Monika is a cheracter from Doki Doki literature Club, DDLC with Sayori, yuri, Natsuki, Monika">
+        <meta property="og:title" content="&quot;Just Monika.&quot;">
+        <meta property="og:site_name" content="JustMonika">
+        <meta property="og:url" content="http://justmonika.ml">
+        <meta property="og:description" content="Spend time with your Monika.">
+        <meta property="og:type" content="article">
+        <meta property="og:image" content="img/10.png">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="images/favicon.png" type="image/png">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111203315-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-111203315-1');
+        </script>
+
     </head>
     <body>
         <style>
@@ -22,7 +45,7 @@
                 background-position: 0px 0px;
                 background-repeat: repeat-x;
 
-                animation: animatedBackground 5000s linear infinite;
+                animation: animatedBackground 500s linear infinite;
             }
             body {
                 margin: 0;
@@ -96,7 +119,7 @@
         
         <div class="bg-container">
             <div class="bg-effects">
-                <div class="stars"></div>
+                <div class="stars animate-area"></div>
             </div>
             <div class="bg">
                 <div class="dialog-container">
@@ -164,7 +187,7 @@
             document.addEventListener('keypress', onSkip);
             document.getElementsByTagName('body')[0].addEventListener('click', onSkip);
             
-            (function(){message = ["Just Monika...", "Just Monika...", "Just Monika..."];showMessage();})();
+            (function(){message = ["Just Monika..."];showMessage();})();
             
             function doFullScreen() {
                 console.log('request full screen');
