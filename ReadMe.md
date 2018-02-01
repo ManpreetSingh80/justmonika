@@ -23,6 +23,7 @@ This project is a web implementation of a key scence of Monika from game [Doki D
 - [x] Fullscreen
 - [x] Add SEO & Analytics
 - [ ] Optimize resources for web
-- [ ] Add background effects
+- [x] Add background effects
 - [ ] Add service worker to cache resources
 - [x] Make About Page
+- [x] Conversation with monika
