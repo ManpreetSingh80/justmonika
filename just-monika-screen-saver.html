@@ -4,18 +4,26 @@
         <title>Just Monika Screen Saver</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <meta name="description" content="Just Monika Screen Saver - A Chrome extension to display a screensaver of Monika from Doki Doki Literature Club. Monika is a cheracter from Doki Doki literature Club, DDLC with Sayori, yuri, Natsuki, Monika">
+        <meta name="description" content="Just Monika Screen Saver - A Chrome & Opera extension to display a screensaver of Monika from Doki Doki Literature Club. Monika is a cheracter from Doki Doki literature Club, DDLC with Sayori, yuri, Natsuki, Monika">
         <meta property="og:title" content="Just Monika Screen Saver">
         <meta property="og:site_name" content="Just Monika Screen Saver">
         <meta property="og:url" content="http://justmonika.ml/just-monika-screen-saver.html">
-        <meta property="og:description" content="Just Monika Screen Saver - A Chrome extension to display a screensaver of Monika from Doki Doki Literature Club">
+        <meta property="og:description" content="Just Monika Screen Saver - A Chrome & Opera extension to display a screensaver of Monika from Doki Doki Literature Club">
         <meta property="og:type" content="article">
         <meta property="og:image" content="http://justmonika.ml/img/screenshot2.jpg">
 
         <meta name="twitter:card" content="Just Monika Screen Saver">
-
-        <meta property="og:site_name" content="Just Monika Screen Saver">
+        <meta name="twitter:site" content="@kronosdevstudio" />
+        <meta name="twitter:creator" content="@kronosdevstudio" />
+        <meta name="twitter:image" content="http://justmonika.ml/img/screenshot2.jpg" />
         <meta name="twitter:image:alt" content="Just Monika Screen Saver">
+        
+        <!-- Google Plus markup -->
+        <meta itemprop="name" content="Just Monika Screen Saver"/>
+        <meta itemprop="description" content="Just Monika Screen Saver - A Chrome & Opera extension to display a screensaver of Monika from Doki Doki Literature Club"/>
+        <meta content="http://justmonika.ml/just-monika-screen-saver.html" itemprop="url"/>
+        <meta itemprop="image" content="http://justmonika.ml/img/screenshot2.jpg"/>
+        <!-- End Google Plus markup -->
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="icon" href="img/favicon.png" type="image/png">
@@ -30,6 +38,8 @@
           gtag('config', 'UA-111203315-1');
         </script>
         <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Lato:300,400,700" rel="stylesheet">
+        <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/akeglhepbonjicpgbjialkmnpdnpbeid">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
     <body>
         <style>
@@ -87,15 +97,15 @@
                 width: 100%;
             }
             
-                .chrome-extension .container {
-                    display: flex;
-                    flex-direction: column;
-                }
-                .chrome-extension .img-previews {
-                    flex: 1;
-                    margin: 20px;
-                    align-self: center;
-                }
+            .chrome-extension .container {
+                display: flex;
+                flex-direction: column;
+            }
+            .chrome-extension .img-previews {
+                flex: 1;
+                margin: 20px;
+                align-self: center;
+            }
             .chrome-extension .img-previews .img {
                 width:100%;
             }
@@ -145,6 +155,20 @@
                 width: 100%;
                 max-width: 960px;
             }
+            .img-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin: 30px;
+            }
+            .instructions li {
+                list-style: decimal;
+            }
+            .img-container img {
+                width: 100%;
+                height: 100%;
+            }
             @keyframes bounce {
                 0% {
                     -webkit-transform: translateY(0);
@@ -182,6 +206,82 @@
               animation-name: bounce;
               -moz-animation-name: bounce;
             }
+            
+            /* Social Buttons */
+            .social-btns {
+                text-align: center;
+            }
+
+            .social-btns li {
+                margin: 8px;
+                display: inline-block;
+                vertical-align: top;
+            }
+            
+            /* Heart Beat Button */
+            .social-btn-heart:hover .social-btn-heart-bg {
+                -webkit-animation: beat 2s infinite;
+                animation: beat 2s infinite;
+            }
+
+            .social-btn-heart-icon {
+                font-size: 16px;
+                color: #fff;
+            }
+
+            .social-btn-heart:hover .social-btn-heart-icon {
+                color: #fff;
+            }
+
+            @-webkit-keyframes beat {
+                0% {
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+                20% {
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+                40% {
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+                60% {
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+            @keyframes beat {
+                0% {
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+                20% {
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+                40% {
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+                60% {
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+
+            .social-btn-heart-bg.twitter {
+                color: #4cc4f2;
+            }
+
+            .social-btn-heart-bg.facebook {
+                color: #3b5998;
+            }
+
+            .social-btn-heart-bg.google {
+                color: #dd4b39;
+            }
+
         </style>
         
         
@@ -210,11 +310,39 @@
                 <h1 class="title">Just Monika Screen Saver</h1><div style="height:20px"></div>
                 <span>Download the chrome extension and make monika as your screen saver</span><br><br><br>
                 <div style="width: 100%;display:flex;justify-content:center;align-items:center;">
-                    <a class="btn" href="https://chrome.google.com/webstore/detail/just-monika-screen-saver/akeglhepbonjicpgbjialkmnpdnpbeid?utm_source=justmonika.ml">Download</a>
+                    <a href="https://chrome.google.com/webstore/detail/just-monika-screen-saver/akeglhepbonjicpgbjialkmnpdnpbeid?utm_source=justmonika.ml" alt="Download for Chrome" title="Download for Chrome">
+                    <img alt="Download for Chrome" src="https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_340x96.png">
+                    </a>
                 </div><br>
+                <div class="social-icons">
+                    <ul class="social-btns">
+
+                        <li>
+                            <a href="http://www.twitter.com/kronosdevstudio" target="_blank" title="Twitter" class="social-btn-heart fa-stack fa-lg">
+                                <i class="social-btn-heart-bg fa fa-heart fa-stack-2x twitter"></i>
+                                <i class="social-btn-heart-icon fa fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="http://www.facebook.com/kronosdevstudio" target="_blank" title="Facebook" class="social-btn-heart fa-stack fa-lg">
+                                <i class="social-btn-heart-bg fa fa-heart fa-stack-2x facebook"></i>
+                                <i class="social-btn-heart-icon fa fa-facebook fa-stack-1x"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://plus.google.com/b/115337629450202874124/115337629450202874124" target="_blank" title="Google+" class="social-btn-heart fa-stack fa-lg">
+                                <i class="social-btn-heart-bg fa fa-heart fa-stack-2x google"></i>
+                                <i class="social-btn-heart-icon fa fa-google fa-stack-1x"></i>
+                            </a>
+                        </li>      
+
+                    </ul>
+                </div>
                 <div class="container">
                     <div class="img-previews">
-                    <img class="img" src="./img/screenshot2.jpg" alt="Just Monika Screen Saver">
+                    <img class="img" src="./img/screenshot2.jpg" alt="Just Monika Screen Saver" title="Just Monika Screen Saver">
                     </div>
                     <div class="description">
                         <h2 class="title">Features</h2><div style="height:20px"></div>
@@ -234,6 +362,41 @@
                 
             </div>
             
+            <div class="instructions">
+                <h1 class="title">How to use</h1><div style="height:20px"></div>
+                <ul>
+                    <li>
+                        <span>Add extension to your browser from above links</span>
+                        <div class="img-container">
+                            <img src="./img/how-1.png" alt="Add just monika screen saver to chrome" title="Add just monika screen saver to chrome">
+                        </div>
+                    </li>
+                    <li>
+                        <span>Left click on the extension icon</span>
+                        <div class="img-container">
+                            <img src="./img/how-2.png" alt="Click on just monika screen saver icon" title="Click on just monika screen saver icon">
+                        </div>
+                    </li>
+                    <li>
+                        <span>Configure the settings</span><br>
+                        <span><b>Wait time</b> - Screensaver will appear when browser is left idle(no keyboard event, no mouse event) for this much time</span>
+                        <div class="img-container">
+                            <img src="./img/how-3.png" alt="Configure the just monika screen saver settings" title="Configure the just monika screen saver settings">
+                        </div>
+                    </li>
+                    <li>
+                        <span>Now left the browser idle for some time. <b>Don't touch your keyboard and mouse.</b> </span><br>
+                        <span>Monika will appear after wait time( For ex.  after 5 minutes as set in above image)</span><br>
+                        <span><b>Note</b> - Screen saver will not appear if browser is in full screen mode. This can be disabled in Display settings</span>
+                    </li>
+                </ul>
+                <br>
+            </div>
+            
+            <div class="img-container">
+                <a class="btn" href="http://justmonika.ml/just-monika-screen-saver-easter-update.html?utm_source=website" alt="Just monika screen saver easter update" title="Click here for Just monika screen saver easter update info">Just Monika Screen Saver Easter Update</a>
+            </div>
+            
             <div class="privacy">
                 <h1 class="title">Privacy Policy</h1><div style="height:20px"></div>
                 <span>This program does not store or transmit any sensitive or personal user data.</span><br>
@@ -248,5 +411,19 @@
             <div style="padding-bottom:300px;"></div>
             <div class="banner-divider"></div>
         </div>
+        <script type="application/ld+json">
+        {
+          "@context" : "http://schema.org",
+          "@type" : "Organization",
+          "name" : "Just Monika",
+          "url" : "http://justmonika.ml",
+          "logo" :"http://justmonika.ml/img/logo.png",
+          "sameAs" : [
+            "http://www.facebook.com/kronosevstudio",
+            "http://www.twitter.com/kronosdevstudio",
+            "https://plus.google.com/b/115337629450202874124/115337629450202874124",
+          ]
+        }
+        </script>
     </body>
 </html>
