@@ -15,15 +15,15 @@ This project is a web implementation of a key scence of Monika from game [Doki D
 # Just Monika Screen Saver
 [Download](http://justmonika.ml/just-monika-screen-saver.html?utm_source=github)
 
-[![](https://manpreetsingh80.github.io/justmonika/img/screenshot2.jpg)](http://justmonika.ml/just-monika-screen-saver.html?utm_source=github "Download")
+[![](https://manpreetsingh80.github.io/justmonika/img/just-monika-screen-saver-blinking-animation.gif)](http://justmonika.ml/just-monika-screen-saver.html?utm_source=github "Download")
 
 
 ## Future Tasks
 
 - [x] Fullscreen
 - [x] Add SEO & Analytics
-- [ ] Optimize resources for web
 - [x] Add background effects
 - [ ] Add service worker to cache resources
 - [x] Make About Page
 - [x] Conversation with monika
+- [ ] Eye tracking
