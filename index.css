@@ -11,6 +11,27 @@
     from { background-position: 0 0; }
     to { background-position: -100% 0; }
 }
+@keyframes blink {
+  0%, 4%, 60%, 64%, 100% { 
+      background: url('./img/room.png') no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    } 
+  1%, 3%, 61%, 63% { 
+      background: url('./img/monika-half.png') no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    } 
+  2%, 62% { 
+      background: url('./img/monika-full.png') no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    } 
+
+}
 .animate-area	{ 
     width: 100%; 
     height: 100%; 
@@ -32,6 +53,7 @@ body {
     background-attachment: fixed;
     position: absolute;
     z-index: 2;
+    animation: blink 6s infinite ease-in-out;
 }
 .bg-container {
     width: 100%;

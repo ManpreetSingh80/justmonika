@@ -125,7 +125,7 @@ function loadConversation() {
     }
 }
 
-(function(){setTimeout(loadConversation, 2000);})();
+(function(){setTimeout(loadConversation, 12000);})();
 
 function doFullScreen() {
     console.log('request full screen');

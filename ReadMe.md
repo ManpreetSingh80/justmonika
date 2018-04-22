@@ -10,7 +10,7 @@ This project is a web implementation of a key scence of Monika from game [Doki D
 
 [justmonika.ml](http://justmonika.ml)
 
-![](https://manpreetsingh80.github.io/justmonika/img/10.png)
+![](https://manpreetsingh80.github.io/justmonika/img/just-monika-screen-saver-blinking-animation.gif)
 
 # Just Monika Screen Saver
 [Download](http://justmonika.ml/just-monika-screen-saver.html?utm_source=github)
