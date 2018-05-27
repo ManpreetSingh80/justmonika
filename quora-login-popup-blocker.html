@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Quora Login Popup Blocker</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="description" content="Quora Login Popup Blocker - This extension removes those annoying login popup from Quora.">
+        <meta property="og:title" content="Quora Login Popup Blocker">
+        <meta property="og:site_name" content="Quora Login Popup Blocker">
+        <meta property="og:url" content="https://justmonika.ml/just-talking-monika-wallpaper-engine.html">
+        <meta property="og:description" content="Quora Login Popup Blocker - This extension removes those annoying login popup from Quora.">
+        <meta property="og:type" content="article">
+        <meta property="og:image" content="https://kronosdevstudio.com/extensions/img/screenshot.png">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@kronosdevstudio" />
+        <meta name="twitter:creator" content="@kronosdevstudio" />
+        <meta name="twitter:image" content="https://kronosdevstudio.com/img/screenshot.png" />
+        <meta name="twitter:image:alt" content="Quora Login Popup Blocker">
+        
+        <!-- Google Plus markup -->
+        <meta itemprop="name" content="Quora Login Popup Blocker"/>
+        <meta itemprop="description" content="Quora Login Popup Blocker - This extension removes those annoying login popup from Quora."/>
+        <meta content="https://kronosdevstudio.com/extensions/quora-login-popup-blocker.html" itemprop="url"/>
+        <meta itemprop="image" content="https://kronosdevstudio.com/extensions/img/screenshot.png"/>
+        <!-- End Google Plus markup -->
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="img/quora.png" type="image/png">
+        <link rel='canonical' href='https://kronosdevstudio.com/extensions/quora-login-popup-blocker.html'>
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119572872-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-119572872-1');
+        </script>
+
+        <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Lato:300,400,700" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <style>
+/*
+            @font-face {
+                font-family: "DejaVuSans";
+                src: url("./fonts/DejaVuSans.ttf") format('truetype');
+            }
+            @font-face {
+                font-family: "DejaVuSans-Bold";
+                src: url("./fonts/DejaVuSans-Bold.ttf") format('truetype');
+                font-weight: bold;
+            }
+*/
+                        
+            body {
+                width: 100%;
+                min-height: 100%;
+                margin: 0;
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                background: url(./img/screenshot.png) repeat fixed;
+                font-family: Lato, sans-serif;
+                font-size: 1rem;
+                line-height: 1.5;
+                display: block;
+            }
+            
+            .about {
+                margin-bottom: 50px;
+            }
+            
+            .content {
+                width: 960px;
+                height: inherit;
+                margin: 0px auto;
+                background: #fff;
+/*                text-align: center;*/
+                border-style: solid;
+                border-color: #ffbde1;
+                border-width: 40px 0px 0px 0px;
+                box-shadow: 0px 0px 15px rgba(0, 0, 0, .3);
+            }
+            
+            .title {
+                color: #9b9b9b;
+                margin: 10px;
+                font-size: 2rem;
+/*                font-family: DejaVuSans-Bold;*/
+            }
+            .nav {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+            }
+            
+            .chrome-extension .container {
+                display: flex;
+                flex-direction: column;
+            }
+            .chrome-extension .img-previews {
+                flex: 1;
+                margin: 20px;
+                align-self: center;
+            }
+            .chrome-extension .img-previews .img {
+                width:100%;
+            }
+            .chrome-extension .description {
+                flex: 1;
+                margin: 20px;
+            }
+            span {
+                padding-left: 15px;
+                display: block;
+            }
+            .btn {
+                padding: 10px 15px;
+                background: #ff0000;
+                color: white;
+                border-radius: 25px;
+                font-size:18px;
+                border-color: white;
+                border-style: double;
+                margin: 10px;
+                text-decoration: none;
+            }
+            
+            
+            .promo-container {
+                height: 428px;
+                margin-top: -40px;
+                margin-bottom:100px;
+            }
+            .promo {
+/*                position: relative;*/
+                display: block;
+                height: 640px;
+                background: url(./img/screenshot.png) top no-repeat;
+            }
+            .banner-divider {
+                position: relative;
+                background: #ff0000;
+                height: 40px;
+                width: 100%;
+            }
+            .chibi-container {
+                display: flex;
+                justify-content: center;
+                padding-top: 100px;
+                position: absolute;
+                padding-bottom: 100px;
+                width: 100%;
+                max-width: 960px;
+            }
+            .img-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin: 30px;
+            }
+            .instructions li {
+                list-style: decimal;
+            }
+            .img-container img {
+                width: 100%;
+                height: 100%;
+            }
+            @keyframes bounce {
+                0% {
+                    -webkit-transform: translateY(0);
+                    -ms-transform:     translateY(0);
+                    transform:         translateY(0);
+
+                }
+                10% {
+                    background: url('./img/m_sticker_2.png');
+                }
+                50% {
+                    -webkit-transform: translateY(-90px);
+                    -ms-transform:     translateY(-90px);
+                    transform:         translateY(-90px);
+                    
+                }
+            }
+            #chibi {  
+              position: absolute;
+              height: 168px;
+              width: 119px;
+              background: url('./img/m_sticker_1.png'); 
+              line-height: 168px;
+              -webkit-animation-duration: 0.7s;
+              animation-duration: 0.7s;
+              -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+              -webkit-animation-timing-function: ease-in-out;
+              animation-timing-function: ease-in-out;
+              animation-iteration-count: 1;
+              -webkit-animation-iteration-count: 1;
+            }
+            #chibi:hover {
+              cursor: pointer;
+              animation-name: bounce;
+              -moz-animation-name: bounce;
+            }
+            
+            /* Social Buttons */
+            .social-btns {
+                text-align: center;
+            }
+
+            .social-btns li {
+                margin: 8px;
+                display: inline-block;
+                vertical-align: top;
+            }
+            
+            /* Heart Beat Button */
+            .social-btn-heart:hover .social-btn-heart-bg {
+                -webkit-animation: beat 2s infinite;
+                animation: beat 2s infinite;
+            }
+
+            .social-btn-heart-icon {
+                font-size: 16px;
+                color: #fff;
+            }
+
+            .social-btn-heart:hover .social-btn-heart-icon {
+                color: #fff;
+            }
+
+            @-webkit-keyframes beat {
+                0% {
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+                20% {
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+                40% {
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+                60% {
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+            @keyframes beat {
+                0% {
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+                20% {
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+                40% {
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+                60% {
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+
+            .social-btn-heart-bg.twitter {
+                color: #4cc4f2;
+            }
+
+            .social-btn-heart-bg.facebook {
+                color: #3b5998;
+            }
+
+            .social-btn-heart-bg.google {
+                color: #dd4b39;
+            }
+
+        </style>
+        
+        
+        <div class="content">
+<!--
+            <div class="parallax">
+            <img src="./img/10.png" style="width: 100%">
+        </div>
+-->
+            <div class="promo-container">
+				<span class="promo" style="top: -96px;"></span>
+			</div>
+            <div class="banner-divider"></div>
+<!--
+            <div class="about">
+                <h1 class="title">About</h1><div style="height:20px"></div>
+                <span>Spend time with your beloved monika from anywhere on the web.</span><br>
+                <span>This is a fan-site and all the contents like images and audio belongs to their creaters.</span>
+            </div>
+            <div class="nav">
+                <a class="btn" href="https://justmonika.ml">< Back to Monika</a>
+                <a class="btn" href="https://justmonika.ml/just-monika-screen-saver.html">Just Monika Screen Saver ></a>
+            </div>
+-->
+            <div class="chrome-extension">
+                <h1 class="title">Quora Login Popup Blocker</h1><div style="height:20px"></div>
+                <span>This extension removes those annoying login popup from Quora.</span><br><br><br>
+                
+                <div style="width: 100%;display:flex;justify-content:center;align-items:center;">
+                    <a href="https://chrome.google.com/webstore/detail/just-monika-screen-saver/akeglhepbonjicpgbjialkmnpdnpbeid?utm_source=justmonika.ml" alt="Download for Chrome" title="Download for Chrome">
+                    <img alt="Download for Chrome" src="https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_340x96.png">
+                    </a>
+                </div><br>
+                
+                <div class="social-icons">
+                    <ul class="social-btns">
+
+                        <li>
+                            <a href="https://www.twitter.com/kronosdevstudio" target="_blank" title="Twitter" class="social-btn-heart fa-stack fa-lg">
+                                <i class="social-btn-heart-bg fa fa-heart fa-stack-2x twitter"></i>
+                                <i class="social-btn-heart-icon fa fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.facebook.com/kronosdevstudio" target="_blank" title="Facebook" class="social-btn-heart fa-stack fa-lg">
+                                <i class="social-btn-heart-bg fa fa-heart fa-stack-2x facebook"></i>
+                                <i class="social-btn-heart-icon fa fa-facebook fa-stack-1x"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://plus.google.com/+KronosDevelopmentStudio" target="_blank" title="Google+" class="social-btn-heart fa-stack fa-lg">
+                                <i class="social-btn-heart-bg fa fa-heart fa-stack-2x google"></i>
+                                <i class="social-btn-heart-icon fa fa-google fa-stack-1x"></i>
+                            </a>
+                        </li>      
+
+                    </ul>
+                </div>
+                <div class="container">
+                    <div class="img-previews">
+<!--                    <img class="img" src="./img/screenshot2.jpg" alt="Just Monika Screen Saver" title="Just Monika Screen Saver">-->
+                        <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/HlqDWVyO728?modestbranding=1" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="description">
+                        
+                        <h2 class="title">Before</h2><div style="height:20px"></div>
+                        <div class="img-previews">
+                            <img class="img" src="./img/quora-blur.PNG" alt="Quora popup before" title="Quora popup before">
+                        </div>
+                        
+                        <h2 class="title">After</h2><div style="height:20px"></div>
+                        <div class="img-previews">
+                            <img class="img" src="./img/quora-unblur.PNG" alt="Quora popup after" title="Quora popup after">
+                        </div>
+                        <br><br>
+                        
+                        <span>Please rate this if you find it of value. Thank you.</span><br>
+                    </div>
+                </div>
+                
+            </div>
+            
+<!--
+            <div class="img-container">
+                <a class="btn" href="https://justmonika.ml/just-monika-screen-saver-easter.html?utm_source=website" alt="Just monika screen saver" title="Click here for Just monika screen saver">Just Monika Screen Saver</a>
+            </div>
+-->
+            
+            <div class="privacy">
+                <h1 class="title">Privacy Policy</h1><div style="height:20px"></div>
+                <span>This program does not store or transmit any sensitive or personal user data.</span><br>
+            </div>
+            
+            
+            <div style="padding-bottom:200px;"></div>
+            <div class="banner-divider"></div>
+        </div>
+        <script type="application/ld+json">
+        {
+          "@context" : "https://schema.org",
+          "@type" : "Organization",
+          "name" : "Kronos Development Studio",
+          "url" : "https://kronosdevstudio.com",
+          "logo" :"https://kronosdevstudio.com/extensions/img/logo.png",
+          "sameAs" : [
+            "https://www.facebook.com/kronosevstudio",
+            "https://www.twitter.com/kronosdevstudio",
+            "https://plus.google.com/+KronosDevelopmentStudio",
+          ]
+        }
+        </script>
+    </body>
+</html>
